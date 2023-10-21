@@ -12,12 +12,24 @@ const Card = ({ il, ilce, km, tur, firstIcon, secondIcon, sil, edit, id }) => {
     edit(id);
   };
 
+  const formatKm = (km) => {
+    const parts = km.toString().split(".");
+    const integerPart = parts[0];
+    const decimalPart = parts[1] || "00";
+
+    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    const formattedKm = `${formattedInteger}.${decimalPart}`;
+
+    return formattedKm;
+  };
+
   return (
     <div className={Style.card}>
       <div className={Style.left}>
         <p>{il}</p>
         <p>{ilce}</p>
-        <p>{km}</p>
+        <p>{formatKm(km)}</p>
         <p>{tur}</p>
       </div>
       <div className={Style.right}>
