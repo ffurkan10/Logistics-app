@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-block: 10px;
+  padding-bottom: 20px;
+  @include breakpoint(sm) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    @include breakpoint(sm) {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      overflow: scroll;
+      padding-bottom: 15px;
+    }
+
+    p {
+      width: 25%;
+      @include breakpoint(sm) {
+        width: 150px;
+      }
+    }
+  }
+  .right {
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      margin-left: 5px;
+      svg {
+        width: 25px;
+        height: 25px;
+        fill: $color-secondary;
+      }
+    }
+  }
+}

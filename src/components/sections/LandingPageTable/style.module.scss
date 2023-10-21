@@ -1,0 +1,77 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+.home {
+  display: flex;
+  padding-block: 50px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 70vh;
+  h1 {
+    font-size: 40px;
+  }
+  .empty {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin-block: 30px;
+    p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 40px;
+    margin-block: 30px;
+    @include breakpoint(md) {
+      width: 100%;
+    }
+    .total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 30px;
+    }
+    .headerContainer {
+      .headers {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 90%;
+        margin-bottom: 30px;
+
+        @include breakpoint(sm) {
+          display: grid;
+          width: 100%;
+          overflow: scroll;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 10px;
+        }
+        p {
+          @include breakpoint(sm) {
+            width: 150px;
+            padding-bottom: 15px;
+          }
+          width: 25%;
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+  .submit {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 60%;
+    @include breakpoint(md) {
+      width: 100%;
+    }
+  }
+}
