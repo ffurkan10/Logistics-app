@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Style from "./style.module.scss";
 import Input from "../input";
 import Select from "react-select";

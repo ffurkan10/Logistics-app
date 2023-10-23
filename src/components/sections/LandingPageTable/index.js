@@ -83,6 +83,7 @@ const LandingPageTable = () => {
         <div className={Style.cardContainer}>
           <div className={Style.headerContainer}>
             <div className={Style.headers}>
+              <p>Sıra</p>
               <p>İl</p>
               <p>İlçe</p>
               <p>Kilometre</p>
@@ -91,6 +92,7 @@ const LandingPageTable = () => {
           </div>
           {route?.addedData?.map((route, index) => (
             <Card
+              counter={route?.counter}
               key={index}
               id={route.id}
               il={route.il}

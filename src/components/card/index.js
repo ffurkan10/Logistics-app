@@ -1,7 +1,18 @@
 import React from "react";
 import Style from "./style.module.scss";
 
-const Card = ({ il, ilce, km, tur, firstIcon, secondIcon, sil, edit, id }) => {
+const Card = ({
+  il,
+  ilce,
+  km,
+  tur,
+  firstIcon,
+  secondIcon,
+  sil,
+  edit,
+  id,
+  counter,
+}) => {
   const handleEditClick = () => {
     sessionStorage.setItem("editedItemId", id);
     sessionStorage.setItem("editedItemIl", il);
@@ -11,7 +22,6 @@ const Card = ({ il, ilce, km, tur, firstIcon, secondIcon, sil, edit, id }) => {
 
     edit(id);
   };
-
   const formatKm = (km) => {
     const parts = km.toString().split(".");
     const integerPart = parts[0];
@@ -27,6 +37,7 @@ const Card = ({ il, ilce, km, tur, firstIcon, secondIcon, sil, edit, id }) => {
   return (
     <div className={Style.card}>
       <div className={Style.left}>
+        <p>{counter}</p>
         <p>{il}</p>
         <p>{ilce}</p>
         <p>{formatKm(km)}</p>
